@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./task2.js"></script>
+</head>
+
+<body>
+    <div id="hi">
+    </div>
+    <script>
+        var x = prompt("Enter Element name :");
+        var y = prompt("Enter TextNode :");
+
+        myfun(x, y)
+
+        function myfun(x, y) {
+
+            var a = document.createElement(x)
+            var b = document.getElementById("hi")
+
+            b.append(a);
+
+            a.className = "mydiv";
+
+            document.getElementsByClassName("mydiv")[0].innerHTML = y;
+        }
+    </script>
+
+</body>
+
+</html>

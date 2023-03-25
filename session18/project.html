@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="a">
+        <div id="b">
+            <label id="d">Enter Base Amount </label>
+            <input id="c" type="text">
+            <label id="d">Enter Interest Amount </label>
+            <input id="amount" type="text">
+            <label id="d">Generate Tax Amount </label>
+            <button id="e" onclick="calc()">Click</button>
+        </div>
+        <div id="b">
+            <table>
+                <thead>
+                    <th>Month</th>
+                    <th>Interest</th>
+                    <th>Final Amount</th>
+                </thead>
+                <tbody id="tbody">
+                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function calc(){
+            var a = document.getElementById("c").value
+            var b = document.getElementById("amount").value
+            var e = parseInt(b);      
+            var arr = ["jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            var x = parseInt(a);
+            for(var i=0;i<arr.length;i++){
+                var tax = (x * e)/100;
+                var z = parseInt(tax);
+                x = x+z;
+                console.log(x);
+                
+                var c = document.getElementById("tbody").innerHTML += `<tr>
+                    <td>${arr[i]}</td>
+                    <td>${z}</td>
+                    <td>${z+x}</td>
+                </tr>`
+            }
+        }
+    </script>
+</body>
+</html>

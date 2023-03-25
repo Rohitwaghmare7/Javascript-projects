@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rinku's Project PO Details</title>
+    <style>
+        #h1 {
+            text-align: center;
+        }
+        
+        #form1 {
+            border: 2px solid black;
+            width: 580px;
+            height: 630px;
+            margin-left: 300px;
+            border-radius: 18px;
+            background-color: aliceblue;
+        }
+        
+        table,
+        th,
+        td {
+            margin-left: 1100px;
+            /* border: 1px solid black;
+            border-collapse: collapse; */
+        }
+        
+        th,
+        td {
+            padding: 10px;
+        }
+        
+        .row {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead></thead>
+        <tr>
+            <th>Name</th>
+            <th>Po_Number</th>
+            <th>Paid_amount</th>
+            <th>Status</th>
+        </tr>
+        <tbody class="tbody"></tbody>
+    </table>
+
+    <form action="" name="form1" id="form1">
+        <h1 id="h1">PO Details Task</h1>
+
+        <div>
+            <h3><span class="error"></span></h3>
+        </div>
+
+        <div class="row">
+            <label>Supplier name</label>
+            <br/>
+            <input id="SupplierName" type="text" name="" required="" />
+        </div>
+        <br />
+        <div class="row">
+            <label>Po value</label>
+            <br />
+            <input id="Po_Value" type="text" name="" required="" />
+        </div>
+        <br />
+        <div class="row">
+            <label>Re-Enter Po value</label>
+            <br />
+            <input id="re-enter" type="text" name="" required="" />
+        </div>
+        <br />
+        <div class="row">
+            <label>Paid Amount</label>
+            <br />
+            <input id="paid-amt" type="text" name="" required="" />
+        </div>
+        <br />
+        <div class="row">
+            <label>Status</label>
+            <br />
+            <input id="status" type="text" name="" required="" placeholder="Fail" disabled />
+        </div>
+        <br />
+
+        <div class="row">
+            <button onclick="getValidation()" id="val" class="btn">
+                        Validate
+                    </button>
+        </div>
+        <br />
+
+        <div class="row">
+            <button id="bt" onclick="sub()">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        const name = document.querySelector("#SupplierName");
+        const PoValue = document.querySelector("#Po_Value");
+        const reEnter = document.querySelector("#re-enter");
+        const Paid = document.querySelector("#paid-amt");
+        const status = document.querySelector("#status");
+        const error = document.querySelector(".error");
+        const submit = document.querySelector("#bt");
+
+        function getValidation() {
+            var Regex = /[0-9]/;
+            var valid = Regex.test(PoValue.value);
+            var PoreCheck = Regex.test(reEnter.value);
+            var paidAmt = Regex.test(Paid.value);
+
+            if (name.value.length <= 5 || name.value.length >= 15) {
+                error.innerHTML = "Please enter name between 5 to 15 in length";
+                name.style.border = "2px solid red";
+            } else if (!valid) {
+                name.style.border = "2px solid green";
+                error.innerHTML = "Please enter number only";
+                PoValue.style.border = "2px solid red";
+            } else if (reEnter.value != PoValue.value) {
+                PoValue.style.border = "2px solid green";
+                error.innerHTML = "Please enter PO value as same as above";
+                reEnter.style.border = "2px solid red";
+            } else if (!paidAmt) {
+                reEnter.style.border = "2px solid green";
+                error.innerHTML = "Please enter number only";
+                Paid.style.border = "2px solid red";
+            } else {
+                name.style.border = "2px solid green";
+                PoValue.style.border = "2px solid green";
+                reEnter.style.border = "2px solid green";
+                status.placeholder = "Success";
+                status.style.border = "2px solid green";
+                // document.querySelector("#sub").style.display = "block";
+                // document.querySelector("#val").style.display = "none";
+            }
+        }
+
+        document.querySelector("#val").addEventListener("click", (event) => {
+            event.preventDefault();
+            getValidation();
+        });
+        
+        function sub() {
+            if (status.placeholder == "Success") {
+                document.querySelector(".tbody").innerHTML += `
+                   <tr>
+                        <td>${name.value}</td>
+                        <td>${PoValue.value}</td>
+                        <td>${Paid.value}</td>
+                        <td>Success</td>
+                    </tr>`;
+                // document.querySelector("#form1").reset();
+                name.value = "";
+                PoValue.value = "";
+                reEnter.value = "";
+                Paid.value = "";
+                status.placeholder = "Fail";
+             
+            } else {
+                alert("Sorry");
+            }
+        };
+        document.querySelector("#bt").addEventListener("click", (evt) =>{
+            evt.preventDefault();  
+        })
+
+    </script>
+</body>
+
+</html>

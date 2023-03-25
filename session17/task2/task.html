@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class first{
+            constructor(){
+                var a = prompt("Enter Marks of sub1 :")
+                var b = prompt("Enter Marks of sub2 :")
+                var c = prompt("Enter Marks of sub3 :")
+                var d = prompt("Enter Marks of sub4 :")
+
+                this.a = a
+                this.b = b
+                this.c = c
+                this.d = d
+            }
+        }
+        class second extends first{
+            constructor(a,b,c,d){
+                super(a,b,c,d)
+            }
+            pr(){
+                var avgg = (parseInt(this.a)+parseInt(this.b)+parseInt(this.c)+parseInt(this.d))/4
+                document.write("Average is :"+avgg)
+                parseInt
+            }
+        }
+        var a = new second
+        a.pr()
+    </script>
+</body>
+</html>

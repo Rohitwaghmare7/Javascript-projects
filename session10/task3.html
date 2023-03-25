@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #a{
+        height: 100px;
+        width: 800px;
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+<body>
+    <div id="a" onmouseenter="change()" onmouseleave="change2()">
+        Hi,
+        I'm Rohit Vikas Waghmare, and I'm a student currently pursuing engineering at MIT in Aurangabad.
+        I'm really interested in technology,
+        and I've taken several courses on web development and application development using Flutter to keep up with the latest advancements in the field.
+        In addition to my programming skills, I also have a passion for design, and I've spent a lot of time honing my skills in Figma.
+        I really enjoy the creative problem-solving that comes with designing something both aesthetically pleasing and functional.
+    </div>
+    <script>
+        function change(){
+            var a = document.getElementById("a").style.backgroundColor = "yellow";
+            var b = document.getElementById("a").style.color = "red";
+            var c = document.getElementById("a").style.height = "800px";
+            var d = document.getElementById("a").style.width = "100%"
+        }
+        function change2(){
+            var a = document.getElementById("a").style.backgroundColor = "white";
+            var b = document.getElementById("a").style.color = "black";
+            var c = document.getElementById("a").style.height = "100px";
+            var d = document.getElementById("a").style.width = "800px"
+        }
+    </script>
+</body>
+</html>

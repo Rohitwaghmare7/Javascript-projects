@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="arrayy()">
+    <div id="a">
+        <div id="b">
+            <h1>Play with array</h1>
+            <label for="">Add items</label>
+            <div id="d1">
+                <button onclick="Push()">Push</button>
+                <button onclick="unshift()">Unshift</button>
+                <button onclick="insertAt()">insertAt</button>
+                <select id="ipos" name="Select position">
+                    <option value="">Position</option>
+                    <option value="">0</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </div>
+            <label for="">Remove items</label>
+            <div id="d1">
+                <button onclick="Pop()">pop</button>
+                <button onclick="shift()">shift</button>
+                <button onclick="removeAt()">removeAt</button>
+                <select id="ipos2" name="Select position">
+                    <option value="">Position</option>
+                    <option value="">0</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </div>
+            <div id="d2" > 
+            </div>
+        </div>
+    </div>
+    <script>
+        var num = 0;
+
+        var imgarr = ["./images/dart.png","./images/bus.png","./images/icons8-figma-480.png","./images/flutter.png"]   
+        var imgrr2 = ["./images/icons8-firebase-480.png","./images/rattlesnake.png","./images/snake.png"]
+
+        function arrayy(){
+            var a = document.getElementById("d2").innerHTML = "";
+            for(var i=0; i<imgarr.length; i++){
+                var a = document.getElementById("d2").innerHTML += `<img id="ig" src="${imgarr[i]}" alt="">`
+            }
+        }
+
+        function Push(){
+            imgarr.push(imgrr2[num])
+            num++; 
+            if(num == 2){
+                num = 0
+            }
+            arrayy();      
+        }
+
+        function Pop(){
+            imgarr.pop();
+            arrayy()
+        }
+
+        function unshift(){
+            imgarr.unshift(imgrr2[num]);
+            num++;
+            if(num == 3){
+                num = 0
+            }
+            arrayy()
+        }
+
+        function shift(){
+            imgarr.shift();
+       
+            arrayy()
+        }
+
+        function insertAt(){
+            var a = document.getElementById("ipos")
+            var i = a.options[a.selectedIndex].innerHTML
+            imgarr.splice(i,0,imgrr2[num]);
+            arrayy()
+        }
+        function removeAt(){
+            var a = document.getElementById("ipos2")
+            var i = a.options[a.selectedIndex].innerHTML
+            imgarr.splice(i,1);
+            arrayy()
+        }
+    </script>
+</body>
+</html>

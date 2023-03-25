@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+</head>
+
+<style>
+    #main_div{
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        border: 2px solid black;
+        width: 300px;
+        height: 300px;
+    }
+    #select{
+        padding: 7px;
+        width: 100px;
+        margin: 10px;
+    }
+    #select1{
+        padding: 7px;
+        width: 100px;
+        margin: 20px;
+    }
+    #label{
+        margin-left: 30px;
+        font-size: 18px;
+    }
+    #btn{
+        padding: 7px;
+        width: 230px;
+        height: 40px;
+        margin-left: 40px;
+        margin-top: 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: lightgreen;
+        border: 1px solid lightgreen;
+    }
+    #btn:hover{
+        background-color: white;
+        font-weight: bold;
+        color: black;
+        border: 1px solid black;
+    }
+    h2{
+        margin: 35px;
+    }
+
+</style>
+<body>
+    <div id="main_div">
+        <h2 id="head">Fruits and Vegetables</h2>
+        <div id="div1">
+            <label id="label" >Select Type: </label>
+            <select id="select1" >
+                 <option value="fruit" id="fruit1" onclick="C()">Fruits</option>
+                <option value="vegetable" id="vegetable" onclick="C()">Vegetables</option>
+            </select>
+        </div>
+        <div id="div2">
+            <label id="label">Select: </label>
+            <select name="" > 
+                <option value="" id="o1"></option> 
+                <option value="" id="o2"></option> 
+                <option value="" id="o3"></option> 
+                <option value="" id="o4"></option>  
+            </select>
+        </div>
+        <div id="div2">
+            <button id="btn">OK</button>
+        </div>  
+        <script>
+
+        // </script>
+    </div>
+</body>
+<script>
+
+    function C(){
+        var x= document.getElementById("select1").value;
+        alert(x)
+    }
+
+
+
+function change1(){
+    alert("Helllloooo");
+}
+
+function change(){
+
+    if(x=="fruit"){
+        console.log(x);
+        document.getElementById("o1").innerHTML = "Mango";
+        document.getElementById("o2").innerHTML = "Pineapple";
+        document.getElementById("o3").innerHTML = "Banana";
+        document.getElementById("o4").innerHTML = "Strawberry";
+    }
+    else{
+        console.log(x);
+        alert("hi")
+        document.getElementById("o1").innerHTML = "Tomato";
+        document.getElementById("o2").innerHTML = "Potato";
+        document.getElementById("o3").innerHTML = "Onion";
+        document.getElementById("o4").innerHTML = "Coriander";
+    }
+}
+        
+
+</script>
+</html>

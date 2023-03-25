@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <p>Rohit Waghmare</p>
+        <div id="a"></div>
+        <div id="b"></div>
+        
+        
+    </div>
+    <script>
+           async function lodeusers(){
+            var usersList = document.getElementById("b");
+            let response = await fetch("https://api.github.com/users")
+            let users = await response.json();
+
+            let ul =document.createElement("ul");
+            for (const user in users) {
+                ul.style.listStyleType = "none";
+
+                let li =document.createElement("li");
+                let div1 =document.createElement("div");
+                div1.style.float = "left";
+                div1.innerHTML = "<h2><button onclick=\"showdetail('" + user.login+"')\">"+user.login+"</button></h2>"
+
+                let div2 = document.createElement("div");
+                div2.style.float = "right";
+                div2.style.paddingTop = "20px";
+                div2.style.paddingRight = "50px";
+                div2.innerHTML = `<img height="50px" src="${user.avatar_url}" alt="${user.login}">`
+
+                let hr = createElement("hr");
+                li.appendChild(div1);
+                li.appendChild(div2);
+                li.appendChild(hr);
+                ul.appendChild(li);
+            }
+            usersList.appendChild(ul);
+           }
+           
+           async function showdetail(login){
+                let userimgv = document.getElementById("a");
+                userimgv.innerHTML = "";
+                let url = "https://api.github.com/users/"+login;
+                let userresp = await fetch(url);
+                let userData = await userresp.json();
+
+                let content = `<div><h2>${userData.name}</h2><p>${userData.id}</p><img src="${userData.avatar_url}"></div>`;
+
+                userimgv.innerHTML = content;
+           }
+           lodeusers();
+    </script>
+</body>
+</html>

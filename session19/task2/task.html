@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="a">
+        <div id="b">
+            <div id="c"><input id="first" type="text"></div>
+            <button onclick="sub()">submit</button>
+            <div id="task"></div>
+            <div id="d"></div>
+
+        </div>
+    </div>
+    <script>
+        function sub() {
+            var a = document.getElementById("first")
+            var b = document.getElementById("task").innerHTML = a.value
+
+            setTimeout(ask, 5000)
+
+            function ask() {
+                document.getElementById("d").innerHTML = ` <h2>Did you completed the task?</h2><input id="second" type="text"> <button id="bt" onclick="clic()">submit</button>`;
+            }
+        }
+        function clic() {
+            var a = document.getElementById("second")
+
+            if(a.value == "yes"){
+                document.getElementById("d").innerHTML = `<h4>Promise Fulfilled?</h4>`
+            }
+            else{
+                document.getElementById("d").innerHTML = `<h3>Promise Un-Fulfilled?</h3>`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

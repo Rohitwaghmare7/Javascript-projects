@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var myScore = 0;
+        var computerScore = 0;
+        var i = 0;
+        var arr = ["rock","paper","scissors"]
+        
+
+        do{
+            
+            var a = prompt("Enter between 1:Rock ,2:scissors ,3:Paper :")
+            var b = Math.floor(Math.random()*3)
+
+        if(a == "rock" && arr[b] == "scissors"){
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("You Win..!!!😊"+"\n")
+            myScore++;
+        }
+        else if(a == "scissors" && arr[b] == "paper"){
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("You Win..!!!😊")
+            myScore++;
+        }
+        else if(a == "paper" && arr[b] == "rock"){
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("You Win..!!!😊")
+            myScore++
+        }
+        else if(a == "rock" && arr[b] == "paper"){
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("Computer Win..!!!☹️")
+            computerScore++;
+        }
+        else if(a == "scissors" && arr[b] == "rock"){
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("Computer Win..!!!☹️")
+            computerScore++;
+        }
+        else if(a == "paper" && arr[b] == "scissors"){
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("Computer Win..!!!☹️")
+            computerScore++;
+        }
+        else{
+            console.log(" ");
+            console.log("You enter : "+a)
+            console.log("You Computer : "+arr[b])
+            console.log("Tie...!!!😮")
+        }
+        i++;
+        console.log("Your score : "+myScore);
+        console.log("computer score :"+computerScore);
+        }while(i <= 5)
+
+        if(myScore > computerScore){
+            console.log("");
+            console.log("You win..!!!😊😊😊😊")
+        }
+        else{
+            console.log("");
+            console.log("Computer wins..!!!☹️☹️☹️☹️")
+        }
+       
+    </script>
+</body>
+</html>

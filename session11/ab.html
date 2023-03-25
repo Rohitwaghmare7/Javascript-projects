@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: aqua
+    }
+
+    ;
+
+    #a {
+        border: 5px solid royalblue;
+        height: 645px;
+        width: 1470px;
+        padding: 20px;
+        background-color: blueviolet;
+    }
+
+    #b {
+        margin-left: auto;
+        margin-right: auto;
+        border: 5px solid royalblue;
+        height: 600px;
+        width: 470px;
+        border-radius: 25px;
+        padding: 20px;
+        background-color: blueviolet;
+    }
+
+    select {
+        margin-right: 5px;
+        margin-top: 50px;
+        background-color: white;
+        border: 0px solid;
+        width: 150px;
+        height: 30px;
+        border-radius: 7px;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        float: left;
+    }
+
+    button {
+        float: right;
+        height: 30px;
+        width: 90px;
+        margin-top: 50px;
+        background-color: white;
+        border: 0px solid;
+        border-radius: 7px;
+        font-size: 20px;
+        text-align: center;
+
+    }
+
+    #text {
+
+        height: 35px;
+        width: 395px;
+        margin-top: 185px;
+        border: 2px solid white;
+        color: white;
+        border-radius: 7px;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    #text1 {
+
+
+        height: 30px;
+        width: 390px;
+        margin-top: 50px;
+        color: white;
+        border: 2px solid white;
+        border-radius: 7px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="a">
+        <div id="b">
+            <select onclick="change1()" id="a1">
+                <option value="">select</option>
+                <option value="vegetables">vegetables</option>
+                <option value="fruits">fruits</option>
+            </select>
+
+            <select name="" id="fc">
+                <option id="f1"> brinjal</option>
+                <option id="f2"> potato</option>
+                <option id="f3"> onion</option>
+                <option id="f4"> tomato</option>
+            </select>
+
+            <button onclick="show()">show</button>
+
+            <div id="text">
+                <span id="sp1"></span>
+            </div>
+            <div id="text1">
+                <span id="sp2"></span>
+            </div>
+            <script>
+                function change1() {
+                    var m = document.getElementById("a1").value
+
+                    if (m == "fruits") {
+                        var a = document.getElementById("f1").innerText = "grapes";
+                        var b = document.getElementById("f2").innerHTML = "mango";
+                        var c = document.getElementById("f3").innerHTML = "banana";
+                        var d = document.getElementById("f4").innerHTML = "apple";
+                    }
+                    else {
+                        var a = document.getElementById("f1").innerText = "brinjal";
+                        var b = document.getElementById("f1").innerHTML = "potato";
+                        var c = document.getElementById("f1").innerHTML = "onion";
+                        var d = document.getElementById("f1").innerHTML = "tomato";
+                    }
+                }
+                function show() {
+                    var m = document.getElementById("a1").value
+                    var d = document.getElementById("fc").value
+                    document.getElementById("sp1").innerText = "you selected food type is: " + m;
+                    document.getElementById("sp2").innerText = "you selected item is:" + d;
+           
+                }
+            </script>
+</body>
+
+</html>

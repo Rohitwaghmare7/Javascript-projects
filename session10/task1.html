@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #a{
+        margin: auto;
+        margin-top: 100px;
+        height: 200px;
+        width: 200px;
+        background-color: black;
+        border : 1px solid black;
+    }
+    #a1{
+        margin: auto;
+        margin-top: 50px;
+        height: 100px;
+        width: 180px;
+        text-align: center;
+        border : 1px solid rgb(255, 0, 0);
+        color: rgb(255, 0, 0);
+    }
+</style>
+<body id = "a2">
+    <div onmouseenter="Change()" onmouseleave="Change2()" id="a">
+        <h1 id="a1"></h1>
+    </div>
+    <script>
+        function Change(){
+            var a = document.getElementById("a").style.backgroundColor = "yellow";
+            var b = document.getElementById("a2").style.backgroundColor = "black"
+            var c = document.getElementById("a1").innerHTML= "you are inside a div"
+        }
+        function Change2(){
+            var a = document.getElementById("a1").innerHTML= "you are outside a div"
+            var b = document.getElementById("a2").style.backgroundColor = "white"
+            var a = document.getElementById("a").style.backgroundColor = "black";
+        }
+    </script>
+</body>
+</html>

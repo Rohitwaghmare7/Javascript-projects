@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="a">
+        <div id="b">
+            <h1>Multiplication table</h1>
+            <label for="">Enter a number :</label>
+            <input id="val1" type="text">
+            <label for="">Enter a Limit  :</label>
+            <input id="lan" type="text">
+            <button onclick="cal()">Find</button>
+            <div>
+                <table>
+                    <tbody id="tb">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        function cal(){
+            var a = document.querySelector("#val1")
+            var b = document.querySelector("#lan")
+
+            var d = (b.value)
+
+            for(var i=1; i<= d; i++){
+                var c = document.getElementById("tb").innerHTML += `<tr id="tb">
+                            <td>${a.value+" X "+i+" = "+i*a.value}</td>
+                        </tr>`
+            }
+           
+
+        } 
+    </script>
+</body>
+</html>

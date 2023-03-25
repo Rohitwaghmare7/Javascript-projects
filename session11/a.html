@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+
+   <style>
+     
+body{ background-color: black;}
+.grid-container
+{
+   height: 50vh;
+   width: 50vw;
+   border: 1px solid black;
+
+}
+
+.item1
+{
+   height: 1180px;
+   width: 320px;
+   border: 1px solid red;
+   grid-column: 1;
+   grid-row:1;
+}
+.item2
+{
+   height: 180px;
+   width: 320px;
+   border: 1px solid red;
+   grid-column: 1;
+   grid-row:2;
+
+
+
+}
+.item3
+{
+   height: 180px;
+   width: 320px;
+   border: 1px solid red;
+   grid-column: 1;
+   grid-row:3;
+
+} 
+ .item4
+{
+   height: 180px;
+   width: 320px;
+   border: 1px solid red;
+   grid-column: 1;
+   grid-row:4;
+
+} 
+ .item5
+{
+   height: 520px;
+   width:  100% ;
+   border: 1px solid GREEN;
+   grid-column: 2/span 3;
+   grid-row:1/span 4;
+}
+</style>
+
+<body>
+   <div class="grid-container">
+
+        <div class="grid-item item 1">   
+        <button onclick="show_img1()"><img class=".item1" src="ivan-lopatin-IlyX21b9MSk-unsplash.jpg" alt=""height="180px" width="320px"> </button>  ;
+        <h4> para 1</h4> 
+        </div>
+
+         <div class="grid-item item2"> 
+         
+           <button onclick="show_img2()" >  <img class=".item2" src="jevgeni-fil-FijpuDmHC28-unsplash.jpg" alt=""height="180px" width="320px"> </button>
+         <h4> para 1</h4> </div>
+   
+         <div class="grid-item item3">
+           <button onclick="show_img3()"> <img src="klara-kulikova-yYfbigH8KSs-unsplash.jpg"  alt=""height="180px" width="320px"></button>
+          <h4> para 1</h4> 
+         </div>
+   
+         <div class="grid-item item4">
+           <button onclick="show_img4()"> <img src="sehajpal-singh-xHNkU1kOU0c-unsplash.jpg" alt=""height="180px" width="320px>"></button>
+           <h4> para 1</h4> 
+       </div>
+   
+        <div class="grid-item item5" id="item5" >
+         </div>
+    </div>
+   </body>
+<script>
+
+   function show_img1()
+   {   alert("hello");
+       document.getElementById=("item5").innerHTML= '<img src="ivan-lopatin-IlyX21b9MSk-unsplash.jpg"> onclick="show_img1()" height="520px" width="100%" alt="">';
+   }
+   function show_img2()
+   {
+       document.getElementById=("item5").innerHTML='<img src="jevgeni-fil-FijpuDmHC28-unsplash.jpg" onclick="show_img2()" height="520px" width="100%" alt=" ">';
+   }
+   function show_img3()
+   {
+       document.getElementById=("item5").innerHTML='<img src="klara-kulikova-yYfbigH8KSs-unsplash.jpg" onclick="show_img3()" height="520px" width="100%" alt="">';
+     console.log=("item5").innerHTML='<img src="klara-kulikova-yYfbigH8KSs-unsplash.jpg" onclick="show_img3()" height="520px" width="100%" alt="">';
+   }
+   
+
+   function show_img4()
+   {
+       document.getElementById=("item5").innerHTML='< img src="sehajpal-singh-xHNkU1kOU0c-unsplash." onclick="show_img4()" height="520px" width="100%" alt="">';
+       
+   }
+
+   
+
+
+
+
+   </script>
+   
+
+</body>
+</html>
+
+
+ 
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="a">
+        <div id="b">
+
+        </div>
+        <button onclick="chang()">Chnage</button>
+    </div>
+    <script>
+        var a = ['./img/icons8-starburst-shape-50.png', './img/icons8-starburst-shape-50 copy 2.png', './img/icons8-starburst-shape-50 copy 3.png', './img/icons8-starburst-shape-50 copy 4.png', './img/icons8-starburst-shape-50 copy 5.png', './img/icons8-starburst-shape-50 copy 6.png', './img/icons8-starburst-shape-50 copy 7.png', './img/icons8-starburst-shape-50 copy 8.png', './img/icons8-starburst-shape-50 copy 9.png', './img/icons8-starburst-shape-50 copy 10.png', './img/icons8-starburst-shape-50 copy 11.png', './img/icons8-starburst-shape-50 copy 12.png', './img/icons8-starburst-shape-50 copy 13.png', './img/icons8-starburst-shape-50 copy 14.png', './img/icons8-starburst-shape-50 copy 15.png', './img/icons8-starburst-shape-50 copy 16.png', './img/icons8-starburst-shape-50 copy 17.png', './img/icons8-starburst-shape-50 copy 18.png', './img/icons8-starburst-shape-50 copy 19.png', './img/icons8-starburst-shape-50 copy 20.png', './img/icons8-starburst-shape-50 copy 21.png', './img/icons8-starburst-shape-50.png', './img/icons8-starburst-shape-50 copy 2.png', './img/icons8-starburst-shape-50 copy 3.png',]
+        var b = ['./images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png']
+
+        for (var i = 0; i < a.length; i++) {
+            document.getElementById('b').innerHTML += `<img src="${a[i]}"><img src="${a[i]}">`
+        }
+
+        function chang() {
+
+            var a = ['./img/icons8-starburst-shape-50 copy 10.png','./img/icons8-starburst-shape-50.png','./img/icons8-starburst-shape-50 copy 4.png', './img/icons8-starburst-shape-50 copy 2.png', './img/icons8-starburst-shape-50 copy 3.png','./img/icons8-starburst-shape-50 copy 10.png', './img/icons8-starburst-shape-50 copy 4.png','./img/icons8-starburst-shape-50 copy 10.png', './img/icons8-starburst-shape-50 copy 4.png','./img/icons8-starburst-shape-50 copy 5.png', './img/icons8-starburst-shape-50 copy 6.png', './img/icons8-starburst-shape-50 copy 7.png','./img/icons8-starburst-shape-50 copy 10.png','./img/icons8-starburst-shape-50 copy 4.png', './img/icons8-starburst-shape-50 copy 8.png', './img/icons8-starburst-shape-50 copy 9.png','./img/icons8-starburst-shape-50 copy 4.png', './img/icons8-starburst-shape-50 copy 10.png', './img/icons8-starburst-shape-50 copy 11.png',  './img/icons8-starburst-shape-50 copy 20.png', './img/icons8-starburst-shape-50 copy 21.png','./img/icons8-starburst-shape-50.png', './img/icons8-starburst-shape-50 copy 2.png', './img/icons8-starburst-shape-50 copy 3.png',]
+            var b = ['./images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png', './images/icons8-starburst-shape-50 (1).png', './images/icons8-starburst-shape-50 (2).png', './images/icons8-starburst-shape-50 (3).png', './images/icons8-starburst-shape-50.png']
+
+            setTimeout(c, 1000)
+
+            function c() {
+                document.getElementById('b').innerHTML = '';
+                var c = Math.floor(Math.random() * 22)
+                var d = Math.floor(Math.random() * 10)
+                var e = Math.floor(Math.random() * 22)
+                var f = Math.floor(Math.random() * 5)
+                var g = Math.floor(Math.random() * 8)
+                var h = Math.floor(Math.random() * 22)
+                var i = Math.floor(Math.random() * 10)
+                var j = Math.floor(Math.random() * 22)
+                var k = Math.floor(Math.random() * 5)
+                var l = Math.floor(Math.random() * 8)
+                a[c] = b[c]
+                a[d] = b[d]
+                a[e] = b[e]
+                a[f] = b[f]
+                a[g] = b[g]
+                a[h] = b[h]
+                a[i] = b[i]
+                a[j] = b[j]
+                a[k] = b[k]
+                a[l] = b[l]
+
+                for (var i = 0; i < a.length; i++) {
+                    document.getElementById('b').innerHTML += `<img src="${a[i]}"><img src="${a[i]}">`
+                }
+                chang()
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

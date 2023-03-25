@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #text1{
+        height: 50px;
+        width: 150px;
+        border: 2px solid black;
+    }
+</style>
+
+<body>
+    <div id="a">
+        <div id="b">
+            <div id="text">
+                <span id="sp1"></span>
+
+            </div>
+              <div id="text">
+                <span id="sp2"></span>
+
+              </div>
+            <div onmouseleave="hide()"
+            onmouseenter="show()" id="text1">
+            <span id="sp3"></span>
+        </div>
+        <div id="text">
+            <span id="sp4"></span>
+        </div>
+     <button onclick="addarray()">clickme</button>
+        </div>
+    </div>
+    <script>
+    
+        var arr3=[];
+        var arr1=[1,2,5,8,9];
+        var a=document.getElementById("sp1").innerText=arr1;
+
+     
+        var arr2=[7,3,4,8,0];
+        var a=document.getElementById("sp2").innerText=arr2;
+  
+     
+         function addarray(){
+             arr3 = arr1.concat(arr2);
+             var c = document.getElementById("sp3").innerText = arr3
+     }
+     
+     function show()
+     {  
+        var c = document.getElementById("sp4").innerText = arr3.length;
+     }
+     
+     function hide()
+     {
+        var a=document.getElementById("sp4").innerText='';
+         }
+        </script>
+    
+</body>
+
+
+</html>

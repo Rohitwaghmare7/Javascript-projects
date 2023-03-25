@@ -1,0 +1,75 @@
+body{
+    background-color: rgb(16, 26, 82);
+}
+#a{
+    border: 5px solid black;
+    height: 680px;
+    width: 1510px;
+    background-color: white;
+}
+#b{
+    border: 5px solid black;
+    height: 600px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#c{
+    text-align: center;
+}
+#d{
+    align-items: center;
+    align-content: center;
+    padding: 20px;
+    width: 400px;
+
+}
+input{
+    border: 2px solid black;
+    height: 20px;
+    padding: 5px;
+    float: right;
+}
+select{
+    height: 30px;
+    width: 175px;
+    float: right;
+    border: 2px solid black;
+    text-align: center;
+}
+#box{
+    height: 30px;
+    width: 175px;  
+    border: 2px solid black; 
+    float: right;
+    text-align: center;
+}
+#box1{
+    height: 30px;
+    width: 175px;  
+    border: 2px solid black; 
+    float: right;
+    text-align: center;
+}
+#button{
+    height: 30px;
+    width: 205px;
+    background-color: rgb(16, 149, 193);
+}
+#button2{
+    height: 30px;
+    width: 205px;
+    background-color: rgb(20, 192, 52);
+}
+#but{
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 505px;      
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+}

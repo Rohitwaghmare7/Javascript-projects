@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Enter Leave starting date</label>
+    <input id="start" type="date">
+    <br>
+    <label for="">Enter Leave ending date</label>
+    <input id="end" type="date">
+    <br>
+    <button onclick="clic()">Click</button>
+    <script>
+        function clic() {
+            var a = document.getElementById("start").value;
+            console.log("Starting Date is :"+a);
+            var b = document.getElementById("end").value;
+            console.log("Ending Date is :"+b);
+
+            var c = a.split("-")
+            var sday = c[2];
+            
+            var d = b.split("-")
+            var eday = d[2]
+
+            console.log("Total number of leaves are :"+(eday-sday));
+        }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+
+body{
+    background-color: rgb(19, 38, 132);
+}
+#a{
+    border: 5px solid black;
+    height: 675px;
+    width: 1450px;
+    margin: 10px;
+    background-color: white;
+}
+#b{
+    margin-right: auto;
+    text-align: left;
+    margin-left: auto;
+    border: 5px solid rgb(165, 158, 158);
+    height: 570px;
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(248, 244, 244);
+}
+p{
+    text-align: left;
+    font-weight: bold;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="">
+    <div id="a">
+        <div id="b">
+            <div id="c">5</div>
+            <div id="e">+</div>
+            <div id="f">10</div>
+            <input id="d" type="text">
+            <button  onclick="clic()">Click</button>
+
+            <div id="score">Score</div>
+            <div id="sc">0</div>
+            <div id="stop"></div>
+        </div>
+    </div>
+    <script>
+        var score = 0;
+        var c = document.getElementById("d")
+       
+        function on(){
+        var a = Math.floor(Math.random()*100)
+        var b = Math.floor(Math.random()*100)
+
+        document.getElementById("c").innerHTML = a
+        document.getElementById("f").innerHTML = b
+        // var c = document.getElementById("d").innerText 
+        }
+       
+        function clic(){
+            var a = document.getElementById("c").innerHTML 
+            var b =  document.getElementById("f").innerHTML 
+            var d = parseInt(a)
+            var e = parseInt(b)
+            var ad = d+e;
+            if(c.value == ad){
+                score++;
+                document.getElementById("sc").innerText = score;
+                on() 
+                
+            }
+            else{
+                document.getElementById("stop").innerText = "Stop your score is :"+score
+            }     
+            
+        }
+       
+    </script>
+</body>
+</html>

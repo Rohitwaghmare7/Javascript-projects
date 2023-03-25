@@ -1,0 +1,153 @@
+<body>
+    <div id="container" style="display:flex"; width="100%";>
+    <div style="width:50%">
+    <div class="col-5" style="height:100vh; display:flex; margin-left: 25%;">
+   
+    <form action="" style="width:100% ;display: flex; justify-content:center;" name="stud" id="stud">
+    <div style ="height:70%; width:80% ; background-color:white;">
+    <h1 style="text-align: center;color:black;"> PO detail task </h1>
+    <div style="color:red;"><h3> <span class="error"></span></h3>
+    </div>
+    <div class="row" style="margin-top:20px !important ; margin-left: 20px;">
+    <label for=""> SUPPLIER NAME:</label><br>
+    <input type="text" id ="supplierName" style="border: 1px solid black">
+    </div>
+    <div class="row" style="margin-top:20px !important ; margin-left: 20px;">
+        <label for=""> PO VALUE:</label><br>
+        <input type="text" id ="PO_value" style="border: 1px solid black; ">
+        </div>
+        <div class="row" style="margin-top:20px !important ; margin-left: 20px;">
+            <label for=""> re-enter PO VALUE:</label><br>
+            <input type="text" id ="ReEnter" style="border: 1px solid black; ">
+            </div>
+            <div class="row" style="margin-top:20px !important ; margin-left: 20px;">
+                <label for=""> paid amount:</label><br>
+                <input type="text" id ="Paid" style="border: 1px solid black; ">
+                </div>
+                <div class="row" style="margin-top:20px !important ;margin-bottom: 20px; margin-left: 20px;">
+                    <label for=""> STATUS</label><br>
+                    <input type="text" id ="status" style="border: 1px solid black;" placeholder="fail" disabled>
+                    </div>
+                    <div class="row">
+                     <button  id="val"  style="background-color: blue; color:black; margin-left: 20px; border:1px solid black; margin-bottom: 2opx; width:50%;" >validate</button>
+                   
+                        </div>
+                        <div class="row">
+                         <button  id="sub"  style="background-color: blue;  color:black; margin-left: 20px; border:1px solid black; margin-bottom: 2opx; width:50%; ">SUBMIT</button>
+                    </div>
+                
+                </div>
+            </div>
+            
+
+    </div>
+</form>
+<br>
+<div style="width:50%" class="col-5" >
+ <table class="table" style="width:50%";>
+    <thead style="border:1px solid greenyellow;">
+<tr>
+    <th>NAME   </th>
+    <th>PO number   </th>
+    <th>PAID   </th>
+    <th>SUCCESS   </th>
+</tr>
+</thead> 
+     <tbody class="tbody" style="text-align:center;">
+    </tbody>
+   </table>
+  </div>
+</tbody>
+</body>
+<script>
+    const name= document.querySelector("#supplierName");
+    const POval= document.querySelector("#PO_value");
+    const reEnter= document.querySelector("#ReEnter");
+    const paid= document.querySelector("#Paid");
+    const status= document.querySelector("#status");
+    const error= document.querySelector(".error");
+    const submit= document.querySelector("#sub");
+
+    function getValidation()
+    {
+      
+      var regex= /0-9/;
+      let valid = Regex.test(POval.value);
+      let POreCheck=Regex.test(ReEnter.value);
+      let paidamt=Regex.test(Paid.value);
+      
+      if(name.value.length <= 5|| name.value.length >= 15)
+
+      {
+        error.innerHTML="please enter name in between 5 to 15 in length";
+        name.style.border="2px solid red";
+      }
+      else if (!valid)
+      { name.style.border="2px solid green ";
+        error.innerHTML="please enter number";
+        POval.style.border="2px solid red";
+     
+     }
+     else if (ReEnter.value!=POval.value)
+      { POval.style.border="2px solid green ";
+        error.innerHTML="please enter number";
+        ReEnter.style.border="2px solid red";
+     
+     }
+     else if (!paid)
+      { ReEnter.style.border="2px solid green ";
+        error.innerHTML="please enter number";
+        Paid.style.border="2px solid red";
+     
+     }
+     else{
+        name.style.border="2px solid green";
+        ReEnter.style.border="2px solid green";
+        Paid.style.border="2px solid green";
+        POval.style.border="2px solid green";
+        Status.placeholder="success";
+        status.style.border="2px solid green";
+       // document.queryselector("#sub").style.display="block"
+      //  document.queryselector("#val").style.display="none"
+     }
+     document.querySelector("#val").addEventListener("click", (evt) =>{
+            evt.preventDefault();
+            validations();
+            
+        })
+}
+    submit.addEventlistener('click',(a)=>{a.preventDefault();
+    })
+    submit.addEventlistener('click',()=>
+    {
+      if(status.placeholder=="success")
+       {document.querySelector(".tbody").innerHTML +=`
+       <tr>
+       <td>${name.value}</td>
+        <td>${POval.value}</td>
+         <td>${Paid.value}</td>
+         <td> success </td>
+         </tr>`
+    
+
+    document.querySelector("#stud").reset();
+    name.value="";
+    ReEnter.value="";
+    Paid.value="";
+    status.value="";
+    POval.value="";
+    var a = document.getElementById("status").placeholder = "fail"
+    error.value = "";
+   
+}})
+
+  
+
+
+
+     
+
+    
+</script>
+</body>
+</html>

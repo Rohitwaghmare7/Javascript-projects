@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Calculator</h1>
+    </div>
+    <script>
+        var a = prompt("Enter 1st value")
+        var b = prompt("Enter 2nd value")
+        var c = prompt("Enter 1st operator")
+        var d = prompt("Enter 2nd operator")
+
+        var e = parseInt(a)
+        var f = parseInt(b)
+
+        if(c == '+'){
+            var g = e+f
+            document.write("Result 1 : "+e+"+"+f+" : "+g+"<br>")
+        }
+        if(c == '-'){
+            var g = e-f
+            document.write("Result 1 : "+e+"-"+f+" : "+g+"<br>")
+        }
+        if(c == '*'){
+            var g = e*f
+            document.write("Result 1 : "+e+"*"+f+" : "+g+"<br>")
+        }
+        if(c == '/'){
+            var g = e/f
+            document.write("Result 1 : "+e+"/"+f+" : "+g+"<br>")
+        }
+        if(d == '+'){
+            var h = e+f
+            document.write("Result 2 : "+e+"+"+f+" : "+h+"<br>")
+        }
+        if(d == '-'){
+            var h = e-f
+            document.write("Result 2 : "+e+"-"+f+" : "+h+"<br>")
+        }
+        if(d == '*'){
+            var h = e*f
+            document.write("Result 2 : "+e+"*"+f+" : "+h+"<br>")
+        }
+        if(d == '/'){
+            var h = e/f
+            document.write("Result 2 : "+e+"/"+f+" : "+h+"<br>")
+        }
+
+
+
+
+    </script>
+</body>
+</html>

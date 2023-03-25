@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload= obj()>
+    <div id="a">
+        <div id="b">
+            <div id="c">
+                <label for="">Name :</label>
+                <span id="name">User</span>
+            </div>
+            <div id="c">
+                <label for="">Age :</label>
+                <span id="age">User</span>
+            </div>
+            <div id="c">
+                <label for="">city :</label>
+                <span id="city">User</span>
+            </div>
+            <div id="c">
+                <label for="">Qualification :</label>
+                <span id="qua">User</span>
+            </div>
+            <div id="c">
+                <label for="">Current location :</label>
+                <span id="loc">User</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        var a = {
+            name : "Rohit",
+            age : "21",
+            city : "San Francisco",
+            qualification : "b-tech",
+            Current_location : "Aurangabad"
+        }
+
+        function obj () {
+            document.getElementById("name").innerHTML = a.name;
+            document.getElementById("age").innerHTML = a.age;
+            document.getElementById("city").innerHTML = a.city;
+            document.getElementById("qua").innerHTML = a.qualification;
+            document.getElementById("loc").innerHTML = a.Current_location;        
+        }
+    </script>
+</body>
+</html>

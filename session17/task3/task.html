@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class students{
+            constructor(){
+                var arr =[];
+                var a = prompt("Enter name os student :")
+                for(var i=0;i<5;i++){
+                   arr[i] = prompt("Enter marks of subject :")
+                }
+                this.arr=arr
+                this.a=a
+            }
+        }
+        class avgg extends students{
+            constructor(arr,a){
+                super(arr,a)
+            }
+            averag(){
+                var name = this.a;
+                var marks = this.arr
+            
+                var info = {
+                    name : name,
+                    marks : marks
+                }
+                console.log(info)
+            }
+        }
+        for(var i =0;i<3;i++){
+            var a = new avgg
+            a.averag()
+        }
+    </script>
+</body>
+</html>

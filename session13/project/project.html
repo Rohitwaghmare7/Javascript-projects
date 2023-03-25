@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+    background-color: rgb(19, 38, 132);
+}
+#a{
+    border: 5px solid black;
+    height: 675px;
+    width: 1450px;
+    margin: 10px;
+    background-color: white;
+}
+#b{
+    /* margin-right: auto; */
+    float: left;
+    margin-left: 200px;
+    border: 5px solid rgb(165, 158, 158);
+    height: 570px;
+    width: 500px;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(248, 244, 244);
+}
+#c{
+    float: right;
+    margin-right: 200px;
+    border: 5px solid rgb(165, 158, 158);
+    height: 550px;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgb(248, 244, 244);
+}
+input{
+    width: 460px;
+    height: 30px;
+    border-radius: 8px;
+    margin: 10px;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+label{
+    margin: 10px;
+    font-size :20px;
+}
+#bt{
+    border : 1px solid black;
+    border-radius: 2px;
+    margin: 10px;
+    width:200px ;
+    background-color: rgb(78, 203, 67);
+    display: none;
+}
+button{
+    border : 1px solid black;
+    border-radius: 2px;
+    margin: 10px;
+    width:200px ;
+    background-color: rgb(43, 113, 218);
+}
+#error{
+    height: 30px;
+    width: 470px;
+    margin: 10px;
+    color:red;
+}
+table{
+    border: 3px solid black;
+    padding: 10px;
+    font-size: 20px;
+    border-collapse:collapse ;
+}
+td{
+    border: 3px solid black;
+    padding: 6px;
+}
+th{
+    border: 3px solid black;
+    padding: 6px;
+}
+
+
+</style>
+<body>
+    <div id="a">
+        <div id="b">
+            <form action="" id="res"></form>
+            <h1>Po Details Task</h1>
+            <div id="error"></div>
+            
+            <label  for="">Supplier Name</label>
+            <input id="name" type="text">
+            <label for="">PO Value</label>
+            <input id="pval"type="text">
+            <label for="">Re-Enter Po Value</label>
+            <input id="rpval"type="text">
+            <label for="">Paid Amt</label>
+            <input id="amt" type="text">
+            <label for="">Status</label>
+            <input id="status";  placeholder="fail" type="text" >
+       
+            <button id="v"onclick="validations()" >validate</button>
+            <br>
+            <button id="bt" onclick="sub()">submit</button>
+        </form>
+        </div>
+        <div id="c">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>PO Number</th>
+                        <th>Paid Ammount</th>
+                        <th>Sucess</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const name = document.querySelector("#name")
+        const pval = document.querySelector("#pval")
+        const rpval = document.querySelector("#rpval")
+        const amt = document.querySelector("#amt")
+        const status = document.querySelector("#status")
+        const error = document.querySelector("#error")
+        const t = document.querySelector("#t")
+        const btt = document.querySelector("#bt")
+
+        function validations(){
+            var rge = /[0-9]/;
+            var num = rge.test(pval.value);
+            var num1 = rge.test(amt.value);
+
+            if(name.value.length < 5 || name.value.length >15){
+                error.innerHTML = "Please enter a name between 5 to 15 characters";
+                name.style.border = "2px solid red";
+            }
+            else if(!num){
+                error.innerHTML = "Please enter number only";
+                pval.style.border = "2px solid red";
+                name.style.border = "2px solid green";
+            }
+            else if(!(rpval.value == pval.value)){
+                error.innerHTML = "Please re-enter Po value ";
+                pval.style.border = "2px solid green";
+                rpval.style.border = "2px solid red";
+            }
+            else if(!num1){
+                error.innerHTML = "Please enter number only";
+                amt.style.border = "2px solid red";
+                rpval.style.border = "2px solid green";
+            }
+            else{
+                amt.style.border = "2px solid green";
+                var a = document.getElementById("status").placeholder = "success"
+                btt.style.display = "block"
+            }
+        }
+
+        document.querySelector("#v").addEventListener("click", (evt) =>{
+            evt.preventDefault();
+            validations();
+            
+        })
+
+
+        function sub(){
+            if(status.placeholder == "success"){
+                const tbody = document.querySelector("#tbody").innerHTML += ` 
+                    <tr>
+                        <td>${name.value}</td>
+                        <td>${pval.value}</td>
+                        <td>${amt.value}</td>
+                        <td>Success</td>
+                    </tr>`;
+                // document.querySelector("#res").reset();    
+                name.value = "";
+                pval.value = "";
+                error.value = "";
+                rpval.value = "";
+                amt.value = "";
+                btt.style.display = "none"
+                var a = document.getElementById("status").placeholder = "fail"
+                error.value = "";
+            }
+            else{
+                alert("sorry!!")
+            }   
+        }
+        document.querySelector("#bt").addEventListener("click", (evt) =>{
+            evt.preventDefault();  
+        })
+        
+    </script>
+</body>
+</html>

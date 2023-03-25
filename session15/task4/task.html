@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = prompt("Enter Technology 3 : ")
+        var techno = {
+            Technology1 : "HTML",
+            get tech(){
+                this.Technology1
+            }
+        }
+        document.write("Technology 1 : "+techno.Technology1+"<br>")
+        var techno2 = {
+            Technology2 : "HTML",
+
+            set tech2(g){
+                // alert(g)
+                this.Technology2 = g
+                
+            }
+        }
+        techno2.tech2 = techno.Technology1
+
+        document.write("Technology 2 : "+techno2.Technology2+"<br>")
+        
+        document.write("Technology 3 :"+a)
+    </script>
+</body>
+</html>
